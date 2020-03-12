@@ -10,6 +10,7 @@ public class GameManager : Singleton<GameManager> {
 	[SerializeField] float maxVideoQuality = 5;
 	[SerializeField] float bonusVideoQuality = 2;
 	[SerializeField] AnimationCurve criticalHitBonusCurve;
+	[SerializeField] AnimationCurve punishCurve;
 	[SerializeField] AnimationCurve enjoymentResponseCurve;
 	[SerializeField] TV[] playerTVs;
 	[SerializeField] UnityEvent onEnterIngame;
@@ -30,6 +31,7 @@ public class GameManager : Singleton<GameManager> {
 	public float[] VideoQuality { get; private set; }
 
 	public AnimationCurve CriticalHitBounusCurve => criticalHitBonusCurve;
+	public AnimationCurve PunishCurve => punishCurve;
 	public UnityEvent OnEnterIngame => onEnterIngame;
 	public UnityEvent OnMatchEnd => onMatchEnd;
 	public UnityEvent OnResetGame => onResetGame;

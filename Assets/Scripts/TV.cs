@@ -22,6 +22,13 @@ public class TV : MonoBehaviour, IPointerDownHandler {
 
 	GameManager GameManager => GameManager.GetInstance();
 
+	float RandomPunishQuality => UnityEngine.Random.Range(0, GameManager.MaxVideoQuality * 0.6f);
+	float RandomQuality => UnityEngine.Random.Range(0, GameManager.MaxVideoQuality);
+	float BonusQuality => GameManager.MaxVideoQuality + GameManager.BonusVideoQuality;
+
+	float PunishRatio => GameManager.PunishCurve.Evaluate(VideoQuality / GameManager.MaxVideoQuality);
+	float CriticalRatio => GameManager.CriticalHitBounusCurve.Evaluate(VideoQuality / GameManager.MaxVideoQuality);
+
 	private void Awake() {
 		animator = GetComponent<Animator>();
 	}
@@ -31,10 +38,15 @@ public class TV : MonoBehaviour, IPointerDownHandler {
 	}
 
 	private void Punch() {
-		var randomQuality = UnityEngine.Random.Range(0, GameManager.MaxVideoQuality);
-		var bonusQuality = GameManager.MaxVideoQuality + GameManager.BonusVideoQuality;
-		var criticalHit = GameManager.CriticalHitBounusCurve.Evaluate(VideoQuality / GameManager.MaxVideoQuality);
-		VideoQuality = Mathf.Lerp(randomQuality, bonusQuality, criticalHit);
+		if (CriticalRatio >= 0.5) {
+			VideoQuality = BonusQuality;
+		}
+		else if (PunishRatio >= 0.5) {
+			VideoQuality = RandomPunishQuality;
+		}
+		else {
+			VideoQuality = RandomQuality;
+		}
 
 		animator.SetTrigger(hHitTrigger);
 		hitSource.PlayOneShot(hitSFX[UnityEngine.Random.Range(0, hitSFX.Length)]);
@@ -64,9 +76,7 @@ public class TV : MonoBehaviour, IPointerDownHandler {
 	}
 
 	private void LateUpdate() {
-		var criticalHit = GameManager.CriticalHitBounusCurve.Evaluate(VideoQuality / GameManager.MaxVideoQuality);
-
 		animator.SetFloat(hQualityFloat, VideoQuality / GameManager.MaxVideoQuality);
-		animator.SetBool(hCritBool, criticalHit > 0.1f);
+		animator.SetBool(hCritBool, CriticalRatio > 0.1f);
 	}
 }
