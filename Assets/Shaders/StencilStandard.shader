@@ -1,24 +1,9 @@
-﻿Shader "Custom/TVScreen"
+﻿Shader "Custom/Stencil/Standard"
 {
     Properties
     {
-		_Color("Color", Color) = (1,1,1,1)
+        _Color ("Color", Color) = (1,1,1,1)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
-        _TestTex ("Test (RGB)", 2D) = "white" {}
-        _StaticTex ("Noise (RGB)", 2D) = "white" {}
-
-        [Space]
-
-		_TestBlend("Test", Range(0,1)) = 0
-		_StaticBlend("Static", Range(0,1)) = 0
-
-        [Space]
-
-		_VBlankError("Vblank Error", Float) = 0
-		_HDistorsion("Horizontal Distorsion", Float) = 0
-
-        [Space]
-
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
 
@@ -41,7 +26,7 @@
     {
         Tags { "RenderType"="Opaque" }
         LOD 200
-        
+
         Stencil {
             Ref [_Stencil]
             Comp [_StencilComp]
@@ -63,14 +48,6 @@
         #pragma target 3.0
 
         sampler2D _MainTex;
-        sampler2D _TestTex;
-        sampler2D _StaticTex;
-
-		float _TestBlend;
-		float _StaticBlend;
-
-		float _VBlankError;
-		float _HDistorsion;
 
         struct Input
         {
@@ -90,17 +67,10 @@
 
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-			float2 uv =  IN.uv_MainTex;
-
-			uv.x += sin(uv.y+_Time.y) * _HDistorsion;
-
-			uv.y += _VBlankError;
-
-            fixed4 c = tex2D (_MainTex, uv);
-            fixed4 test = tex2D (_TestTex,  uv);
-            fixed4 stat = tex2D (_StaticTex, cos(_Time.w*3 % 1) + IN.uv_MainTex * 2);
-
-            o.Albedo = lerp(lerp(c.rgb,test,_TestBlend), stat, _StaticBlend) *_Color;
+            // Albedo comes from a texture tinted by color
+            fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
+            o.Albedo = c.rgb;
+            // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
             o.Alpha = c.a;

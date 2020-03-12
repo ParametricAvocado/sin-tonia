@@ -780,54 +780,78 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0.0031280518
-      inSlope: 0
-      outSlope: -0.00437157
-      tangentMode: 69
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.7120538
-      value: 0.000015258789
-      inSlope: -0.00437157
-      outSlope: 16.670479
-      tangentMode: 69
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.7719066
-      value: 0.99779075
-      inSlope: 16.670479
-      outSlope: 0.06310558
-      tangentMode: 69
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.80691534
+      time: 0.7
       value: 1
-      inSlope: 0.06310558
-      outSlope: -47.160923
-      tangentMode: 69
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.82811934
+      time: 0.8
+      value: 0.1
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.85
       value: 0
-      inSlope: -47.160923
-      outSlope: 0
-      tangentMode: 69
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -0
-      outSlope: 0.22566299
-      tangentMode: 69
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  punishCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8
+      value: 1
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
@@ -840,36 +864,27 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 69
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.75
-      value: 0
-      inSlope: -0
-      outSlope: 16.014818
-      tangentMode: 69
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.8119818
-      value: 0.99262726
-      inSlope: 16.014818
-      outSlope: 0.03921289
-      tangentMode: 69
+      value: 1
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.03921289
-      outSlope: 0
-      tangentMode: 69
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
@@ -1125,6 +1140,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1350716180342775239, guid: b1782d9b5ff8d7843ad88129b74db45e,
+        type: 3}
+      propertyPath: m_Name
+      value: TV2
+      objectReference: {fileID: 0}
     - target: {fileID: 6461949455941522686, guid: b1782d9b5ff8d7843ad88129b74db45e,
         type: 3}
       propertyPath: m_Enabled
@@ -1179,11 +1199,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350716180342775239, guid: b1782d9b5ff8d7843ad88129b74db45e,
-        type: 3}
-      propertyPath: m_Name
-      value: TV2
       objectReference: {fileID: 0}
     - target: {fileID: 2658791658860244948, guid: b1782d9b5ff8d7843ad88129b74db45e,
         type: 3}
@@ -1267,6 +1282,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 875127017546801291, guid: c636b1d349ab02743bae0f6462c9531a,
+        type: 3}
+      propertyPath: m_Name
+      value: UI Canvas
+      objectReference: {fileID: 0}
     - target: {fileID: 5146053288116679471, guid: c636b1d349ab02743bae0f6462c9531a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1517,11 +1537,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 875127017546801291, guid: c636b1d349ab02743bae0f6462c9531a,
-        type: 3}
-      propertyPath: m_Name
-      value: UI Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 1678763927350133063, guid: c636b1d349ab02743bae0f6462c9531a,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1716,6 +1731,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1350716180342775239, guid: b1782d9b5ff8d7843ad88129b74db45e,
+        type: 3}
+      propertyPath: m_Name
+      value: TV1
+      objectReference: {fileID: 0}
     - target: {fileID: 6461949455941522686, guid: b1782d9b5ff8d7843ad88129b74db45e,
         type: 3}
       propertyPath: m_Enabled
@@ -1760,11 +1780,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350716180342775239, guid: b1782d9b5ff8d7843ad88129b74db45e,
-        type: 3}
-      propertyPath: m_Name
-      value: TV1
       objectReference: {fileID: 0}
     - target: {fileID: 2658791658860244948, guid: b1782d9b5ff8d7843ad88129b74db45e,
         type: 3}

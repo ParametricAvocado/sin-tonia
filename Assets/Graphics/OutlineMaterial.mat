@@ -7,13 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_pantalla
-  m_Shader: {fileID: 4800000, guid: a459def105d1d8f4ba5278cb70089efc, type: 3}
-  m_ShaderKeywords: 
+  m_Name: OutlineMaterial
+  m_Shader: {fileID: 4800000, guid: cf4b76b518bd73d4787efbfd1cc1c128, type: 3}
+  m_ShaderKeywords: _ZWRITE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 8400000, guid: 6f0784e0b72a208488376351619d99cc, type: 2}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -55,25 +55,17 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _StaticTex:
-        m_Texture: {fileID: 2800000, guid: c9b618cc705b04a4fa04c520e30e5dcf, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TestTex:
-        m_Texture: {fileID: 2800000, guid: 789152ff9ae67f54f8af1dcd9b787b3a, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _ColorMask: 15
     - _CullMode: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _Displacement: 0
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.872
+    - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _HDistorsion: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -81,17 +73,14 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StaticBlend: 0
     - _Stencil: 5
-    - _StencilComp: 8
-    - _StencilOp: 2
+    - _StencilComp: 6
+    - _StencilOp: 0
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
-    - _TestBlend: 0
     - _UVSec: 0
-    - _VBlankError: 0
-    - _ZTest: 4
+    - _ZTest: 8
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.2964046, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
